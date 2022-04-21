@@ -13,7 +13,9 @@ namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
     public static class ConfigureServicesAuthentication
     {
         /// <summary>
-        /// Настроить аутентификацию и авторизацию
+        /// Настроить аутентификацию и авторизацию.
+        /// Ссылка на документацию:
+        /// "https://identityserver4.readthedocs.io/en/latest/quickstarts/2_interactive_aspnetcore.html"
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration"></param>
