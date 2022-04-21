@@ -4,6 +4,9 @@ using WorkTime.BoardRecords.Web.models;
 
 namespace WorkTime.BoardRecords.Web.ConfigurationModels
 {
+    /// <summary>
+    /// Класс конфигурации AppUser
+    /// </summary>
     public class AppUserConfiguration : IEntityTypeConfiguration<AppUser>
     {
         public void Configure(EntityTypeBuilder<AppUser> builder)

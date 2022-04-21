@@ -6,9 +6,19 @@ using System.Threading.Tasks;
 
 namespace WorkTime.BoardRecords.Web.models
 {
+    /// <summary>
+    /// Dto времени окончания
+    /// </summary>
     public class EmplEndTime
     {
-        public Guid IdUser { get; set; }
+        /// <summary>
+        /// Id пользователя
+        /// </summary>
+        public int IdUser { get; set; }
+        
+        /// <summary>
+        /// Время окончания
+        /// </summary>
         public DateTime EndTime { get; set; }
     }
 }

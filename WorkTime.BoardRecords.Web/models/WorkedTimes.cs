@@ -4,12 +4,30 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WorkTime.BoardRecords.Web.models
 {
+    /// <summary>
+    /// Модель отработанного времени
+    /// </summary>
     public class WorkedTimes
     {
-        public Guid Id { get; set; }
+        /// <summary>
+        /// Id записи
+        /// </summary>
+        public int Id { get; set; }
+        
+        /// <summary>
+        /// Время начала
+        /// </summary>
         [Required]
         public DateTime StartTime { get; set; }
+        
+        /// <summary>
+        /// Время окончания
+        /// </summary>
         public DateTime EndTime { get; set; }
+        
+        /// <summary>
+        /// Пользователь
+        /// </summary>
         [Required]
         public AppUser User { get; set; }
     }

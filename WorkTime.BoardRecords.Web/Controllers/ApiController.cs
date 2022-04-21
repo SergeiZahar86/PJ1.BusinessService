@@ -16,8 +16,19 @@ namespace WorkTime.BoardRecords.Web.Controllers
     [Produces("application/json")]
     public class ApiController : ControllerBase
     {
+        /// <summary>
+        /// Фиктивный метод из Calabonga.DemoClasses
+        /// </summary>
         private readonly List<Person> _people = People.GetPeople();
+        
+        /// <summary>
+        /// Контекст базы данных
+        /// </summary>
         private ApplicationDbContext dbContext;
+        
+        /// <summary>
+        /// Предоставляет API для управления пользователем в магазине настойчивых.
+        /// </summary>
         private readonly UserManager<AppUser> _userManager;
 
 
@@ -27,6 +38,10 @@ namespace WorkTime.BoardRecords.Web.Controllers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Получить весь список работников
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("[action]")]
         //[Authorize]
         [Authorize(Roles = "Administrator")]
@@ -35,6 +50,11 @@ namespace WorkTime.BoardRecords.Web.Controllers
             return Ok(_people);
         }
 
+        /// <summary>
+        /// Получить работника по Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("[action]/{id:int}")]
         public IActionResult GetById(int id)
         {
@@ -42,6 +62,11 @@ namespace WorkTime.BoardRecords.Web.Controllers
             return Ok(item);
         }
 
+        /// <summary>
+        /// Добавить работника
+        /// </summary>
+        /// <param name="empl"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> SetEmplAsync([FromBody] EmplModel empl)
@@ -64,16 +89,19 @@ namespace WorkTime.BoardRecords.Web.Controllers
             return BadRequest("Работник с таким именем уже существует");
         }
 
+        /// <summary>
+        /// Добавить работнику время начало
+        /// </summary>
+        /// <param name="empl"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         [Authorize(Roles = "Employee")]
         public async Task<IActionResult> SetStartTimeAsync([FromBody] EmplStartTime empl)
         {
-
             DateTime date = new DateTime();
             var user = await _userManager.FindByIdAsync(empl.IdUser.ToString());
             var time = await dbContext.WorkedTimes
                 .FirstOrDefaultAsync(x => x.User == user && x.EndTime == date);
-
 
             if (user != null && time == null)
             {
@@ -88,6 +116,12 @@ namespace WorkTime.BoardRecords.Web.Controllers
             }
             return BadRequest("Что-то пошло не так");
         }
+        
+        /// <summary>
+        /// Добавить работнику время окончания
+        /// </summary>
+        /// <param name="empl"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         [Authorize(Roles = "Employee")]
         public async Task<IActionResult> SetEndTimeAsync([FromBody] EmplEndTime empl)
@@ -105,6 +139,12 @@ namespace WorkTime.BoardRecords.Web.Controllers
             }
             return BadRequest("Что-то пошло не так");
         }
+        
+        /// <summary>
+        /// Получить весь список отработанного времени
+        /// </summary>
+        /// <param name="empl"></param>
+        /// <returns></returns>
         [HttpPost("[action]")]
         [Authorize(Roles = "Employee")]
         public async Task<IActionResult> GetListTimeAsync([FromBody] EmplGetListTime empl)
