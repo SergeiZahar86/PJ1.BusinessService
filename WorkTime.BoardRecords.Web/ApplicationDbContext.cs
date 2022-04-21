@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
-using WorkTime.BoardRecords.Web.Configuration;
+using WorkTime.BoardRecords.Web.ConfigurationModels;
 using WorkTime.BoardRecords.Web.models;
 
 namespace WorkTime.BoardRecords.Web
@@ -49,6 +49,5 @@ namespace WorkTime.BoardRecords.Web
             builder.ApplyConfiguration(new WorkTimesConfiguration());
 
         }
-
     }
 }

@@ -4,5 +4,86 @@
         <name>WorkTime.BoardRecords.Web</name>
     </assembly>
     <members>
+        <member name="T:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesAuthentication">
+            <summary>
+            Регистрация и конфигурации сервисов аутентификации
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesAuthentication.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Настроить аутентификацию и авторизацию
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesBase">
+            <summary>
+            Класс устанавливающий регистрацию и конфигурацию базовых сервисов
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesBase.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Регистрация и конфигурации базовых сервисов
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+            <param name="configuration">Конфигурация</param>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.AppStart.Configures.ConfigureCommon">
+            <summary>
+            Класс с общими настройками
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.AppStart.Configures.ConfigureCommon.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Задает общие настройки
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.AppStart.Configures.ConfigureEndpoints">
+            <summary>
+            Класс для настройки источника информации
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.AppStart.Configures.ConfigureEndpoints.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Настроить маршрутизацию, Cors, и т.д.
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesControllers">
+            <summary>
+            Класс устанавливающий конфигурацию контроллеров
+            </summary>
+        </member>
+        <member name="M:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesControllers.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация контроллеров
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+        </member>
+        <member name="T:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesCors">
+            <summary>
+            Класс устанавливающий CORS конфигурацию
+            </summary>
+        </member>
+        <member name="M:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesCors.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Устанавливает CORS конфигурацию
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+        </member>
+        <member name="T:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesSwagger">
+            <summary>
+            Класс устанавливающий Swagger конфигурацию
+            </summary>
+        </member>
+        <member name="M:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesSwagger.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Устанавливает Swagger конфигурацию
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+            <param name="configuration">Конфигурация</param>
+        </member>
     </members>
 </doc>

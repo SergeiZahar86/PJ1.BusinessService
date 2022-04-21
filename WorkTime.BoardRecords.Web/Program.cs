@@ -1,26 +1,37 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using WorkTime.AuthService.WebApi.AppStart.ConfigureServices;
+using WorkTime.BoardRecords.Web.AppStart.Configures;
+using WorkTime.BoardRecords.Web.AppStart.ConfigureServices;
 
-namespace WorkTime.BoardRecords.Web
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            CreateHostBuilder(args).Build().Run();
-        }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
-    }
-}
+//------- Инициализация экземпляра приложения с предкофигурацией
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+//------- Коллекция сервисов
+IServiceCollection services = builder.Services;
+
+//------- Из метода Startup.ConfigureServices()
+ConfigureServicesBase.ConfigureServices(services, builder.Configuration);
+ConfigureServicesAuthentication.ConfigureServices(services, builder.Configuration);
+ConfigureServicesCors.ConfigureServices(services);
+ConfigureServicesControllers.ConfigureServices(services);
+ConfigureServicesSwagger.ConfigureServices(services);
+
+// ------ Сборка приложения
+WebApplication app = builder.Build();
+
+//------- Обработка значений даты и времени для PostgreSQL (для MsSql закомментировать)
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
+//------- Инициализация начальных данных
+// IServiceScope scope = ((IApplicationBuilder) app).ApplicationServices.CreateScope();
+// await DatabaseInitializer.InitAsync(scope.ServiceProvider);
+
+//------- из метода Startup.Configure()   
+ConfigureCommon.Configure(app, app.Environment);
+ConfigureEndpoints.Configure(app);
+
+//----- Запуск
+app.Run();
