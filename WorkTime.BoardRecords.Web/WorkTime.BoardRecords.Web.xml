@@ -4,6 +4,22 @@
         <name>WorkTime.BoardRecords.Web</name>
     </assembly>
     <members>
+        <member name="T:WorkTime.BoardRecords.Web.ApplicationDbContext">
+            <summary>
+            Контекст базы данных
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.ApplicationDbContext.WorkedTimes">
+            <summary>
+            Набор сущностей  WorkedTimes
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Настраивает схему, необходимую для структуры идентификации
+            </summary>
+            <param name="builder"></param>
+        </member>
         <member name="T:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesAuthentication">
             <summary>
             Регистрация и конфигурации сервисов аутентификации
@@ -11,7 +27,9 @@
         </member>
         <member name="M:WorkTime.BoardRecords.Web.AppStart.ConfigureServices.ConfigureServicesAuthentication.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
             <summary>
-            Настроить аутентификацию и авторизацию
+            Настроить аутентификацию и авторизацию.
+            Ссылка на документацию:
+            "https://identityserver4.readthedocs.io/en/latest/quickstarts/2_interactive_aspnetcore.html"
             </summary>
             <param name="services"></param>
             <param name="configuration"></param>
@@ -50,6 +68,177 @@
             Настроить маршрутизацию, Cors, и т.д.
             </summary>
             <param name="app"></param>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.ConfigurationModels.AppUserConfiguration">
+            <summary>
+            Класс конфигурации AppUser
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.ConfigurationModels.WorkTimesConfiguration">
+            <summary>
+            Класс конфигурации WorkedTimes
+            </summary>
+        </member>
+        <member name="F:WorkTime.BoardRecords.Web.Controllers.ApiController._people">
+            <summary>
+            Фиктивный метод из Calabonga.DemoClasses
+            </summary>
+        </member>
+        <member name="F:WorkTime.BoardRecords.Web.Controllers.ApiController.dbContext">
+            <summary>
+            Контекст базы данных
+            </summary>
+        </member>
+        <member name="F:WorkTime.BoardRecords.Web.Controllers.ApiController._userManager">
+            <summary>
+            Предоставляет API для управления пользователем в магазине настойчивых.
+            </summary>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.GetAll">
+            <summary>
+            Получить весь список работников
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.GetById(System.Int32)">
+            <summary>
+            Получить работника по Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.SetEmplAsync(WorkTime.BoardRecords.Web.models.EmplModel)">
+            <summary>
+            Добавить работника
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.SetStartTimeAsync(WorkTime.BoardRecords.Web.models.EmplStartTime)">
+            <summary>
+            Добавить работнику время начало
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.SetEndTimeAsync(WorkTime.BoardRecords.Web.models.EmplEndTime)">
+            <summary>
+            Добавить работнику время окончания
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WorkTime.BoardRecords.Web.Controllers.ApiController.GetListTimeAsync(WorkTime.BoardRecords.Web.models.EmplGetListTime)">
+            <summary>
+            Получить весь список отработанного времени
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.AppRole">
+            <summary>
+            Модель роли
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.AppRole.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.AppUser">
+            <summary>
+            Модель пользователя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.AppUser.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.AppUser.LastName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.AppUser.WorkTimeList">
+            <summary>
+            Список отработанного времени
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.EmplEndTime">
+            <summary>
+            Dto времени окончания
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplEndTime.IdUser">
+            <summary>
+            Id пользователя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplEndTime.EndTime">
+            <summary>
+            Время окончания
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.EmplGetListTime">
+            <summary>
+            Dto для списка отработанного времени
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.EmplModel">
+            <summary>
+            Модель работника
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplModel.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.EmplStartTime">
+            <summary>
+            Dto времени начала пользователя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplStartTime.IdUser">
+            <summary>
+            Id пользователя
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.EmplStartTime.StartTime">
+            <summary>
+            Время начала
+            </summary>
+        </member>
+        <member name="T:WorkTime.BoardRecords.Web.models.WorkedTimes">
+            <summary>
+            Модель отработанного времени
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.WorkedTimes.Id">
+            <summary>
+            Id записи
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.WorkedTimes.StartTime">
+            <summary>
+            Время начала
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.WorkedTimes.EndTime">
+            <summary>
+            Время окончания
+            </summary>
+        </member>
+        <member name="P:WorkTime.BoardRecords.Web.models.WorkedTimes.User">
+            <summary>
+            Пользователь
+            </summary>
         </member>
         <member name="T:WorkTime.AuthService.WebApi.AppStart.ConfigureServices.ConfigureServicesControllers">
             <summary>

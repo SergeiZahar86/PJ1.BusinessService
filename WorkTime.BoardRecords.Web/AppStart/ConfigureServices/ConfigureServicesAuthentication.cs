@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using WorkTime.AuthService.WebApi.AppStart;
-using WorkTime.BoardRecords.Web.models;
 
 namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
 {
