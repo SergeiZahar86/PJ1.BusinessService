@@ -32,6 +32,8 @@ namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
                 .AddJwtBearer("Bearer",
                     options =>
                     {
+                        // Получает или задает "Орган власти" для использования
+                        // при вызове OpenIdConnect.
                         options.Authority = "https://localhost:10001";
                         options.Audience = "SwaggerAPI";
                         options.RequireHttpsMetadata = false;
@@ -41,6 +43,8 @@ namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
                             ValidateAudience = false
                         };
                     });
+            
+            
             services.AddAuthorization();
         }
     }

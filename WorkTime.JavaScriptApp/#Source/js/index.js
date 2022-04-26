@@ -1,4 +1,6 @@
-﻿document.getElementById("login").addEventListener("click", login);
+﻿
+
+document.getElementById("login").addEventListener("click", login);
 document.getElementById("callApi").addEventListener("click", callApi);
 document.getElementById("refresh").addEventListener("click", refresh);
 document.getElementById("logout").addEventListener("click", logout);
@@ -105,7 +107,7 @@ function print(message, data) {
     }
     if (data && typeof data === "object") {
         document.getElementById("data")
-			.innerText = JSON.stringify(data, null, 5);
+            .innerText = JSON.stringify(data, null, 5);
     } else {
         document.getElementById("data").innerText = "";
     }
@@ -167,13 +169,13 @@ function startTime() {
             .then((response) => {
                 console.log("ответ из startTime: ", response);
                 document.getElementById('worktimetable-status')
-					.innerText = response.data;
+                    .innerText = response.data;
                 getWorkedTime();
             })
             .catch((error) => {
                 console.error("ошибка в startTime ", error);
                 document.getElementById('worktimetable-status')
-					.innerText = "есть незакрытые записи";
+                    .innerText = "есть незакрытые записи";
             });
 
     }).catch(function (error) {
@@ -210,7 +212,7 @@ function endTime() {
             .catch((error) => {
                 console.error("ошибка в endTime ", error);
                 document.getElementById('worktimetable-status')
-					.innerText = "Нет открытых записей";
+                    .innerText = "Нет открытых записей";
             });
 
     }).catch(function (error) {

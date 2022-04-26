@@ -43,8 +43,8 @@ namespace WorkTime.BoardRecords.Web.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("[action]")]
-        //[Authorize]
-        [Authorize(Roles = "Administrator")]
+        [Authorize]
+        //[Authorize(Roles = "Administrator")]
         public IActionResult GetAll()
         {
             return Ok(_people);
