@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
-using WorkTime.BoardRecords.Web.ConfigurationModels;
-using WorkTime.BoardRecords.Web.models;
+using PJ1_BusinessService.ConfigurationModels;
+using PJ1_BusinessService.models;
 
-namespace WorkTime.BoardRecords.Web
+namespace PJ1_BusinessService
 {
     /// <summary>
     /// Контекст базы данных

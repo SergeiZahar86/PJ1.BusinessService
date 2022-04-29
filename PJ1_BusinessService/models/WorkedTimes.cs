@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace WorkTime.BoardRecords.Web.models
+namespace PJ1_BusinessService.models
 {
     /// <summary>
     /// Модель отработанного времени

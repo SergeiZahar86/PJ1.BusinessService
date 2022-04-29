@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Identity;
 
-namespace WorkTime.BoardRecords.Web.models
+namespace PJ1_BusinessService.models
 {
     /// <summary>
     /// Модель роли

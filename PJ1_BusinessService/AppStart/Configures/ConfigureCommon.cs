@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Swashbuckle.AspNetCore.SwaggerUI;
 
-namespace WorkTime.BoardRecords.Web.AppStart.Configures
+namespace PJ1_BusinessService.AppStart.Configures
 {
     /// <summary>
     /// Класс с общими настройками

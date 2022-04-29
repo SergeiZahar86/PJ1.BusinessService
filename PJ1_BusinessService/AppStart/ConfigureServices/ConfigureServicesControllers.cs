@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace WorkTime.AuthService.WebApi.AppStart.ConfigureServices
+namespace PJ1_BusinessService.AppStart.ConfigureServices
 {
     /// <summary>
     /// Класс устанавливающий конфигурацию контроллеров

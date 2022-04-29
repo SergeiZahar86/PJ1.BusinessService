@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WorkTime.BoardRecords.Web.models
+namespace PJ1_BusinessService.models
 {
     /// <summary>
     /// Модель пользователя

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorkTime.BoardRecords.Web.models
+namespace PJ1_BusinessService.models
 {
     /// <summary>
     /// Модель работника

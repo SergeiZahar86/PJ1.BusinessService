@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using WorkTime.BoardRecords.Web.models;
+using PJ1_BusinessService.models;
 
-namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
+namespace PJ1_BusinessService.AppStart.ConfigureServices
 {
     /// <summary>
     /// Класс устанавливающий регистрацию и конфигурацию базовых сервисов

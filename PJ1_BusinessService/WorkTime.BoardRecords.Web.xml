@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PJ1_BusinessService</name>
+    </assembly>
+    <members>
+        <member name="T:PJ1_BusinessService.ApplicationDbContext">
+            <summary>
+            Контекст базы данных
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.ApplicationDbContext.WorkedTimes">
+            <summary>
+            Набор сущностей  WorkedTimes
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Настраивает схему, необходимую для структуры идентификации
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesAuthentication">
+            <summary>
+            Регистрация и конфигурации сервисов аутентификации
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesAuthentication.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Настроить аутентификацию и авторизацию.
+            Ссылка на документацию:
+            "https://identityserver4.readthedocs.io/en/latest/quickstarts/2_interactive_aspnetcore.html"
+            </summary>
+            <param name="services"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesBase">
+            <summary>
+            Класс устанавливающий регистрацию и конфигурацию базовых сервисов
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesBase.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Регистрация и конфигурации базовых сервисов
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+            <param name="configuration">Конфигурация</param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesControllers">
+            <summary>
+            Класс устанавливающий конфигурацию контроллеров
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesControllers.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Конфигурация контроллеров
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesCors">
+            <summary>
+            Класс устанавливающий CORS конфигурацию
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesCors.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Устанавливает CORS конфигурацию
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesSwagger">
+            <summary>
+            Класс устанавливающий Swagger конфигурацию
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.ConfigureServices.ConfigureServicesSwagger.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Устанавливает Swagger конфигурацию
+            </summary>
+            <param name="services">Коллекция сервисов</param>
+            <param name="configuration">Конфигурация</param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.Configures.ConfigureCommon">
+            <summary>
+            Класс с общими настройками
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.Configures.ConfigureCommon.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            Задает общие настройки
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:PJ1_BusinessService.AppStart.Configures.ConfigureEndpoints">
+            <summary>
+            Класс для настройки источника информации
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.Configures.ConfigureEndpoints.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Настроить маршрутизацию, Cors, и т.д.
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:PJ1_BusinessService.ConfigurationModels.AppUserConfiguration">
+            <summary>
+            Класс конфигурации AppUser
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.ConfigurationModels.WorkTimesConfiguration">
+            <summary>
+            Класс конфигурации WorkedTimes
+            </summary>
+        </member>
+        <member name="F:PJ1_BusinessService.Controllers.ApiController._people">
+            <summary>
+            Фиктивный метод из Calabonga.DemoClasses
+            </summary>
+        </member>
+        <member name="F:PJ1_BusinessService.Controllers.ApiController.dbContext">
+            <summary>
+            Контекст базы данных
+            </summary>
+        </member>
+        <member name="F:PJ1_BusinessService.Controllers.ApiController._userManager">
+            <summary>
+            Предоставляет API для управления пользователем в магазине настойчивых.
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.GetAll">
+            <summary>
+            Получить весь список работников
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.GetById(System.Int32)">
+            <summary>
+            Получить работника по Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.SetEmplAsync(PJ1_BusinessService.models.EmplModel)">
+            <summary>
+            Добавить работника
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.SetStartTimeAsync(PJ1_BusinessService.models.EmplStartTime)">
+            <summary>
+            Добавить работнику время начало
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.SetEndTimeAsync(PJ1_BusinessService.models.EmplEndTime)">
+            <summary>
+            Добавить работнику время окончания
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PJ1_BusinessService.Controllers.ApiController.GetListTimeAsync(PJ1_BusinessService.models.EmplGetListTime)">
+            <summary>
+            Получить весь список отработанного времени
+            </summary>
+            <param name="empl"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PJ1_BusinessService.models.AppRole">
+            <summary>
+            Модель роли
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.AppRole.Description">
+            <summary>
+            Описание
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.AppUser">
+            <summary>
+            Модель пользователя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.AppUser.FirstName">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.AppUser.LastName">
+            <summary>
+            Фамилия
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.AppUser.WorkTimeList">
+            <summary>
+            Список отработанного времени
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.EmplEndTime">
+            <summary>
+            Dto времени окончания
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplEndTime.IdUser">
+            <summary>
+            Id пользователя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplEndTime.EndTime">
+            <summary>
+            Время окончания
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.EmplGetListTime">
+            <summary>
+            Dto для списка отработанного времени
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.EmplModel">
+            <summary>
+            Модель работника
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplModel.Name">
+            <summary>
+            Имя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplModel.Password">
+            <summary>
+            Пароль
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.EmplStartTime">
+            <summary>
+            Dto времени начала пользователя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplStartTime.IdUser">
+            <summary>
+            Id пользователя
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.EmplStartTime.StartTime">
+            <summary>
+            Время начала
+            </summary>
+        </member>
+        <member name="T:PJ1_BusinessService.models.WorkedTimes">
+            <summary>
+            Модель отработанного времени
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.WorkedTimes.Id">
+            <summary>
+            Id записи
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.WorkedTimes.StartTime">
+            <summary>
+            Время начала
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.WorkedTimes.EndTime">
+            <summary>
+            Время окончания
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.models.WorkedTimes.User">
+            <summary>
+            Пользователь
+            </summary>
+        </member>
+    </members>
+</doc>

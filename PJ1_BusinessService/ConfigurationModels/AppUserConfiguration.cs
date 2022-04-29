@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using WorkTime.BoardRecords.Web.models;
+using PJ1_BusinessService.models;
 
-namespace WorkTime.BoardRecords.Web.ConfigurationModels
+namespace PJ1_BusinessService.ConfigurationModels
 {
     /// <summary>
     /// Класс конфигурации AppUser

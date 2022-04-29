@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 
-namespace WorkTime.BoardRecords.Web.AppStart.Configures
+namespace PJ1_BusinessService.AppStart.Configures
 {
     /// <summary>
     /// Класс для настройки источника информации

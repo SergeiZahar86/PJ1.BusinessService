@@ -1,9 +1,8 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using WorkTime.AuthService.WebApi.AppStart.ConfigureServices;
-using WorkTime.BoardRecords.Web.AppStart.Configures;
-using WorkTime.BoardRecords.Web.AppStart.ConfigureServices;
+using PJ1_BusinessService.AppStart.Configures;
+using PJ1_BusinessService.AppStart.ConfigureServices;
 
 
 //------- Инициализация экземпляра приложения с предкофигурацией

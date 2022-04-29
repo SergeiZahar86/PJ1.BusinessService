@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
-namespace WorkTime.BoardRecords.Web.AppStart.ConfigureServices
+namespace PJ1_BusinessService.AppStart.ConfigureServices
 {
     /// <summary>
     /// Регистрация и конфигурации сервисов аутентификации

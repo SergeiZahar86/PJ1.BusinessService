@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WorkTime.BoardRecords.Web.models;
+using PJ1_BusinessService.models;
 
-namespace WorkTime.BoardRecords.Web.Controllers
+namespace PJ1_BusinessService.Controllers
 {
     [Route("[controller]")]
     [Produces("application/json")]
