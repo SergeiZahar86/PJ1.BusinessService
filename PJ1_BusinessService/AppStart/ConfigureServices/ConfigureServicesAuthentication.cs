@@ -22,10 +22,18 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
         {
             services.AddAuthentication(options =>
                 {
+                    // Используется как резервная схема по умолчанию для всех
+                    // остальных значений по умолчанию.
                     options.DefaultScheme =
                         IdentityServerAuthenticationDefaults.AuthenticationScheme;
+                    
+                    // Используется ChallengeAsync(HttpContext, String, AuthenticationProperties)
+                    // в качестве схемы по умолчанию .
                     options.DefaultChallengeScheme =
                         IdentityServerAuthenticationDefaults.AuthenticationScheme;
+                    
+                    // Используется AuthenticateAsync(HttpContext, String) в
+                    // качестве схемы по умолчанию .
                     options.DefaultAuthenticateScheme =
                         IdentityServerAuthenticationDefaults.AuthenticationScheme;
                 })
@@ -35,16 +43,22 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         // Получает или задает "Орган власти" для использования
                         // при вызове OpenIdConnect.
                         options.Authority = "https://localhost:10001";
+
+                        // Получает или задает единственное допустимое значение
+                        // аудитории для любого полученного токена OpenIdConnect.
                         options.Audience = "SwaggerAPI";
+
+                        // Если равно false, то SSL при отправке токена не используется
                         options.RequireHttpsMetadata = true;
 
+                        // Получает или задает параметры, используемые для проверки
+                        // маркеров удостоверения.
                         options.TokenValidationParameters = new TokenValidationParameters()
                         {
                             ValidateAudience = false
                         };
                     });
-            
-            
+
             services.AddAuthorization();
         }
     }
