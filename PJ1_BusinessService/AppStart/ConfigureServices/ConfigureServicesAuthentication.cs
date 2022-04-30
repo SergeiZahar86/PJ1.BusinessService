@@ -36,7 +36,7 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         // при вызове OpenIdConnect.
                         options.Authority = "https://localhost:10001";
                         options.Audience = "SwaggerAPI";
-                        options.RequireHttpsMetadata = false;
+                        options.RequireHttpsMetadata = true;
 
                         options.TokenValidationParameters = new TokenValidationParameters()
                         {
