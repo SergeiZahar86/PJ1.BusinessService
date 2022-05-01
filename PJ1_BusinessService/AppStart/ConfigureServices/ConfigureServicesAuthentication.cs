@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using PJ1_BusinessService.AppStart.LibraryModels;
 
 namespace PJ1_BusinessService.AppStart.ConfigureServices
 {
@@ -38,6 +39,10 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         IdentityServerAuthenticationDefaults.AuthenticationScheme;
                 })
                 .AddJwtBearer("Bearer",
+                    
+                    // Класс JwtBearerOptions (конфигурирование которого происходит в этом блоке
+                    // кода) предоставляет сведения, необходимые для управления поведением
+                    // ПО промежуточного слоя проверки подлинности носителя
                     options =>
                     {
                         // Получает или задает "Орган власти" для использования
@@ -51,9 +56,7 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         // Если равно false, то SSL при отправке токена не используется
                         options.RequireHttpsMetadata = true;
 
-                        // Получает или задает параметры, используемые для проверки
-                        // маркеров удостоверения.
-                        options.TokenValidationParameters = new TokenValidationParameters()
+                        options.TokenValidationParameters = new TokenValidationParametersMy()
                         {
                             ValidateAudience = false
                         };
