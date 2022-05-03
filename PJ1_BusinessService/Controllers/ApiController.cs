@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Calabonga.DemoClasses;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -43,10 +45,12 @@ namespace PJ1_BusinessService.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("[action]")]
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [Authorize]
         //[Authorize(Roles = "Administrator")]
         public IActionResult GetAll()
         {
+            var nameIdentifier = this.HttpContext.User.Claims;
             return Ok(_people);
         }
 

@@ -3,7 +3,7 @@
     "WorkTime.BoardRecords.Web": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "docs",
       "applicationUrl": "https://localhost:7001;http://localhost:7000",
       "environmentVariables": {

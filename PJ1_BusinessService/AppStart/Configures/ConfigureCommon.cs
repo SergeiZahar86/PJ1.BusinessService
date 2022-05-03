@@ -24,20 +24,20 @@ namespace PJ1_BusinessService.AppStart.Configures
 
             //Зарегистрируйте промежуточное программное обеспечение Swagger с
             //дополнительным действием настроек для параметров Di-Injected
-            app.UseSwagger();
+            //app.UseSwagger();
             
             //Зарегистрируйте промежуточное программное обеспечение SwaggerUi с
             //дополнительным действием настроек для параметров Di-Injected
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger UI Demo");
-                options.DocumentTitle = "Title";
-                options.RoutePrefix = "docs";
-                options.DocExpansion(DocExpansion.List);
-                options.OAuthClientId("client_business");
-                options.OAuthScopeSeparator(" ");
-                options.OAuthClientSecret("client_secret_swagger");
-            });
+            // app.UseSwaggerUI(options =>
+            // {
+            //     options.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger UI Demo");
+            //     options.DocumentTitle = "Title";
+            //     options.RoutePrefix = "docs";
+            //     options.DocExpansion(DocExpansion.List);
+            //     options.OAuthClientId("client_business");
+            //     options.OAuthScopeSeparator(" ");
+            //     options.OAuthClientSecret("client_secret_swagger");
+            // });
         }
     }
 }

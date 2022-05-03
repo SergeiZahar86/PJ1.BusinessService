@@ -16,7 +16,7 @@ ConfigureServicesBase.ConfigureServices(services, builder.Configuration);
 ConfigureServicesAuthentication.ConfigureServices(services, builder.Configuration);
 ConfigureServicesCors.ConfigureServices(services);
 ConfigureServicesControllers.ConfigureServices(services);
-ConfigureServicesSwagger.ConfigureServices(services);
+//ConfigureServicesSwagger.ConfigureServices(services);
 
 // ------ Сборка приложения
 WebApplication app = builder.Build();

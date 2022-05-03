@@ -103,6 +103,95 @@
             </summary>
             <param name="app"></param>
         </member>
+        <member name="T:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy">
+            <summary>
+            Содержит набор параметров, которые используются  <see cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenHandler"/>
+            при проверке <see cref="T:Microsoft.IdentityModel.Tokens.SecurityToken"/>.
+            </summary>
+        </member>
+        <member name="M:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.#ctor">
+            <summary>
+            Инициализирует новый экземпляр класса <see cref="T:Microsoft.IdentityModel.Tokens.TokenValidationParameters"/>.
+            </summary>
+            <remarks>Содержит набор параметров, которые используются <see cref="T:Microsoft.IdentityModel.Tokens.SecurityTokenHandler"/>
+            при проверке <see cref="T:Microsoft.IdentityModel.Tokens.SecurityToken"/></remarks> 
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.RequireExpirationTime">
+            <summary>
+            Получает или задает значение, указывающее, должны ли маркеры иметь значение "expiration".
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.RequireSignedTokens">
+            <summary>
+            Получает или задает значение, указывающее, можно ли
+            считать  <see cref="T:Microsoft.IdentityModel.Tokens.SecurityToken"/> допустимым, если он не подписан.
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.RequireAudience">
+            <summary>
+            Получает или задает значение, указывающее, должны ли token SAML
+            иметь хотя бы один AudienceRestriction.
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.SaveSigninToken">
+            <summary>
+            Получает или задает логическое значение для управления сохранением
+            исходного token после проверки token безопасности.
+            </summary>
+            <remarks>Среда выполнения обратится к этому значению и сохранит
+            исходный token, который был проверен.</remarks>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateActor">
+            <summary>
+            Получает или задает значение, указывающее, обнаружен ли маркер
+            субъекта, должен ли он быть проверен.
+            </summary>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateAudience">
+            <summary>
+            Получает или задает логическое значение для управления проверкой слушателя
+            во время проверки token.
+            </summary>
+            <remarks>Проверка слушателя, смягчает переадресацию атак. Например,
+            сайт, получивший токен, не смог переиграть его на другую сторону.
+            Переадресованный токен будет содержать аудиторию исходного сайта.</remarks>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateIssuer">
+            <summary>
+            Получает или задает логическое значение для управления проверкой
+            издателя во время проверки token.
+            </summary>
+            <remarks>
+            Проверка издателя смягчает атаки переадресации, которые могут произойти,
+            когда IdentityProvider представляет несколько клиентов
+            и подписывает tokens одними и теми же ключами.
+            Возможно, что токен, выпущенный для той же аудитории, может быть от другого владелеца.
+            Например, приложение может принимать пользователей из contoso.onmicrosoft.com,
+            но не fabrikam.onmicrosoft.com, оба допустимых клиента.
+            Приложение, принимающее tokens от fabrikam, может переслать их
+            приложению, принимающему tokens для contoso.
+            </remarks>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateIssuerSigningKey">
+            <summary>
+            Получает или устанавливает логический, который контролирует, е
+            сли называется проверка <see cref="T:Microsoft.IdentityModel.Tokens.SecurityKey"/>, который подписал SecurityToken.
+            </summary>
+            <remarks>
+            Токены могут содержать public key, необходимый для проверки подписи.</remarks>
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateLifetime">
+            <summary>
+            Получает или устанавливает логическое управление, если срок службы
+            будет подтверждена во время проверки токена.
+            </summary>                
+        </member>
+        <member name="P:PJ1_BusinessService.AppStart.LibraryModels.TokenValidationParametersMy.ValidateTokenReplay">
+            <summary>
+            Получает или устанавливает логическое управление, если воспроизведение
+            токена будет проверено во время проверки токена.
+            </summary>                
+        </member>
         <member name="T:PJ1_BusinessService.ConfigurationModels.AppUserConfiguration">
             <summary>
             Класс конфигурации AppUser

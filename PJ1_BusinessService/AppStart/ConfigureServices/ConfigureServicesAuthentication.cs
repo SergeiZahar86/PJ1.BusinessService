@@ -1,4 +1,8 @@
-﻿using IdentityServer4.AccessTokenValidation;
+﻿using System.Linq;
+using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -38,29 +42,40 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                     options.DefaultAuthenticateScheme =
                         IdentityServerAuthenticationDefaults.AuthenticationScheme;
                 })
-                .AddJwtBearer("Bearer",
+                // .AddIdentityServerAuthentication(options =>
+                // {
+                //     options.ApiName = "SwaggerAPI";
+                //     options.Authority = "https://localhost:10001";
+                //     options.RequireHttpsMetadata = false;
+                // })
+                .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,
                     
                     // Класс JwtBearerOptions (конфигурирование которого происходит в этом блоке
                     // кода) предоставляет сведения, необходимые для управления поведением
                     // ПО промежуточного слоя проверки подлинности носителя
                     options =>
                     {
+                        //options.SaveToken = true;
+                        //options.IncludeErrorDetails = true;
                         // Получает или задает "Орган власти" для использования
                         // при вызове OpenIdConnect.
                         options.Authority = "https://localhost:10001";
+                        //options.ClaimsIssuer = 
 
                         // Получает или задает единственное допустимое значение
                         // аудитории для любого полученного токена OpenIdConnect.
                         options.Audience = "SwaggerAPI";
+                        //options.Audience = "https://localhost:10003";
 
                         // Если равно false, то SSL при отправке токена не используется
-                        options.RequireHttpsMetadata = true;
-
+                        options.RequireHttpsMetadata = false;
                         options.TokenValidationParameters = new TokenValidationParametersMy()
                         {
-                            ValidateAudience = false
+                            ValidateAudience = false,
+                            ValidTypes = new[] { "at+jwt" }
                         };
-                    });
+                    })
+                ;
 
             services.AddAuthorization();
         }
