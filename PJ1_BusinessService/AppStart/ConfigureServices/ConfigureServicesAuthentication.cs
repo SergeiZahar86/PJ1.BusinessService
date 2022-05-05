@@ -71,6 +71,8 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         options.RequireHttpsMetadata = false;
                         options.TokenValidationParameters = new TokenValidationParametersMy()
                         {
+                            //TODO сделать валидацию по времени жизни и посмотреть
+                            //todo другие свойства
                             ValidateAudience = false,
                             ValidTypes = new[] { "at+jwt" }
                         };
