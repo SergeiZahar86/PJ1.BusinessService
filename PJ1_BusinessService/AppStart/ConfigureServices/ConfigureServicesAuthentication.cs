@@ -1,15 +1,13 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using IdentityServer4.AccessTokenValidation;
+﻿using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using PJ1_BusinessService.AppStart.LibraryModels;
 
 namespace PJ1_BusinessService.AppStart.ConfigureServices
 {
+    // todo добавить клаймы к пользователю и сделать проверку по клаймам
+    
     /// <summary>
     /// Регистрация и конфигурации сервисов аутентификации
     /// </summary>
@@ -71,8 +69,7 @@ namespace PJ1_BusinessService.AppStart.ConfigureServices
                         options.RequireHttpsMetadata = false;
                         options.TokenValidationParameters = new TokenValidationParametersMy()
                         {
-                            //TODO сделать валидацию по времени жизни и посмотреть
-                            //todo другие свойства
+                            //TODO сделать валидацию по времени жизни и посмотреть другие свойства
                             ValidateAudience = false,
                             ValidTypes = new[] { "at+jwt" }
                         };
